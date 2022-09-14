@@ -48,6 +48,13 @@ func NewMsgCreateFixedPriceAuction(
 	}
 }
 
+func (msg MsgCreateFixedPriceAuction) IsPrivacy() bool { return false }
+func (msg MsgCreateBatchAuction) IsPrivacy() bool      { return false }
+func (msg MsgCancelAuction) IsPrivacy() bool           { return false }
+func (msg MsgPlaceBid) IsPrivacy() bool                { return false }
+func (msg MsgModifyBid) IsPrivacy() bool               { return false }
+func (msg MsgAddAllowedBidder) IsPrivacy() bool        { return false }
+
 func (msg MsgCreateFixedPriceAuction) Route() string { return RouterKey }
 
 func (msg MsgCreateFixedPriceAuction) Type() string { return TypeMsgCreateFixedPriceAuction }
